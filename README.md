@@ -12,14 +12,14 @@ echo 'blacklist dvb_usb_rtl28xxu' > /etc/modprobe.d/rtl28xx-blacklist.conf
 reboot
 ```
 
-## via docker cli
+## install via docker cli
 ```
 docker volume create openwebrx-settings
 docker volume create openwebrx-etc
 docker run --name openwebrx-softmbe --device /dev/bus/usb -p 8073:8073 -v openwebrx-settings:/var/lib/openwebrx -v openwebrx-etc:/etc/openwebrx --restart unless-stopped slechev/openwebrx-softmbe
 ```
 
-## via portainer
+## install via portainer
 first create a volume for the settings:
 
 ![volume](/portainer/add_volume.png)
