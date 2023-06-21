@@ -15,7 +15,7 @@ reboot
 docker volume create openwebrx-settings
 docker volume create openwebrx-etc
 docker run -d --name openwebrx-softmbe --device /dev/bus/usb -p 8073:8073 -v openwebrx-settings:/var/lib/openwebrx -v openwebrx-etc:/etc/openwebrx --restart unless-stopped slechev/openwebrx-softmbe
-docker exec -it owrx-softmbe python3 /opt/openwebrx/openwebrx.py admin adduser [username]
+docker exec -it openwebrx-softmbe python3 /opt/openwebrx/openwebrx.py admin adduser [username]
 ```
 
 ## more information on the official wiki
