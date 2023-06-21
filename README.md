@@ -4,13 +4,14 @@ This is the docker image for [openwebrx](https://github.com/jketterl/openwebrx) 
 Get it from [docker hub](https://hub.docker.com/r/slechev/openwebrx-softmbe).
 
 
-# INSTALL
-
 ## first disable the kernel driver for RTL devices (if you're going to use one) and then reboot
 ```
 echo 'blacklist dvb_usb_rtl28xxu' > /etc/modprobe.d/rtl28xx-blacklist.conf
 reboot
 ```
+
+## read how to run the docker image
+[on the official wiki](https://github.com/jketterl/openwebrx/wiki/Getting-Started-using-Docker)
 
 ## install via docker cli
 ```
@@ -18,6 +19,10 @@ docker volume create openwebrx-settings
 docker volume create openwebrx-etc
 docker run --name openwebrx-softmbe --device /dev/bus/usb -p 8073:8073 -v openwebrx-settings:/var/lib/openwebrx -v openwebrx-etc:/etc/openwebrx --restart unless-stopped slechev/openwebrx-softmbe
 ```
+
+## create admin user
+[follow official wiki](https://github.com/jketterl/openwebrx/wiki/User-Management#special-information-for-docker-users)
+
 
 ## install via portainer
 first create a volume for the settings:
