@@ -5,6 +5,13 @@ Get it from [docker hub](https://hub.docker.com/r/slechev/openwebrx-softmbe).
 
 
 # INSTALL
+
+## first disable the kernel driver for RTL devices (if you're going to use one) and then reboot
+```
+echo 'blacklist dvb_usb_rtl28xxu' > /etc/modprobe.d/rtl28xx-blacklist.conf
+reboot
+```
+
 ## via docker cli
 ```
 docker volume create openwebrx-settings
