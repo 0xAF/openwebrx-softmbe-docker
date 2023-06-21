@@ -8,7 +8,8 @@ Get it from [docker hub](https://hub.docker.com/r/slechev/openwebrx-softmbe).
 ## via docker cli
 ```
 docker volume create openwebrx-settings
-docker run --device /dev/bus/usb -p 8073:8073 -v openwebrx-settings:/var/lib/openwebrx slechev/openwebrx-softmbe:latest
+docker volume create openwebrx-etc
+docker run --name openwebrx-softmbe --device /dev/bus/usb -p 8073:8073 -v openwebrx-settings:/var/lib/openwebrx -v openwebrx-etc:/etc/openwebrx --restart unless-stopped slechev/openwebrx-softmbe
 ```
 
 ## via portainer
