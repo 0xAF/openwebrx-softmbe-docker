@@ -10,18 +10,18 @@ echo 'blacklist dvb_usb_rtl28xxu' > /etc/modprobe.d/rtl28xx-blacklist.conf
 reboot
 ```
 
-## read how to run the docker image
-[on the official wiki](https://github.com/jketterl/openwebrx/wiki/Getting-Started-using-Docker)
-
 ## install via docker cli
 ```
 docker volume create openwebrx-settings
 docker volume create openwebrx-etc
-docker run --name openwebrx-softmbe --device /dev/bus/usb -p 8073:8073 -v openwebrx-settings:/var/lib/openwebrx -v openwebrx-etc:/etc/openwebrx --restart unless-stopped slechev/openwebrx-softmbe
+docker run -d --name openwebrx-softmbe --device /dev/bus/usb -p 8073:8073 -v openwebrx-settings:/var/lib/openwebrx -v openwebrx-etc:/etc/openwebrx --restart unless-stopped slechev/openwebrx-softmbe
+docker exec -it owrx-softmbe python3 /opt/openwebrx/openwebrx.py admin adduser [username]
 ```
 
-## create admin user
-[follow official wiki](https://github.com/jketterl/openwebrx/wiki/User-Management#special-information-for-docker-users)
+## more information on the official wiki
+[on running docker image](https://github.com/jketterl/openwebrx/wiki/Getting-Started-using-Docker)
+and
+[adding admin user](https://github.com/jketterl/openwebrx/wiki/User-Management#special-information-for-docker-users)
 
 
 ## install via portainer
