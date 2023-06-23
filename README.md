@@ -3,6 +3,7 @@ This is the docker image for [openwebrx](https://github.com/jketterl/openwebrx) 
 
 Get it from [docker hub](https://hub.docker.com/r/slechev/openwebrx-softmbe).
 
+**You might want the Plus version of [OpenWebRX+](https://github.com/0xAF/openwebrxplus-softmbe-docker)**
 
 ## first disable the kernel driver for RTL devices (if you're going to use one) and then reboot
 ```
